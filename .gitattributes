@@ -1,3 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 LibraryWebsite/lib/* linguist-vendored
+EntryExamsApp/wwwroot/lib/* linguist-vendored
