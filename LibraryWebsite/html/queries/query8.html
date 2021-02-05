@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запросы</title>
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="../../css/site.css" />
+</head>
+<body>
+    <!-- header -->
+    <header class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <!-- Иконка -->
+        <a class="navbar-brand" href="#">
+            <img src="../../img/kb_logo.svg" alt="KB logo" />
+        </a>
+
+        <!--Кнопка для разворачивания меню-->
+        <button aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-target="#navbarToggler" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Навигация -->
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav">
+                <li class="nav-item px-3 ">
+                    <a href="../../index.html" class="nav-link">
+                        <i class="fas fa-home pr-1"></i>
+                        <span>Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item px-3 ">
+                    <a href="../tables/books.html" class="nav-link">
+                        <i class="fas fa-table pr-1"></i>
+                        <span>Таблицы</span>
+                    </a>
+                </li>
+
+                <li class="nav-item px-3 active">
+                    <a href="query1.html" class="nav-link">
+                        <i class="fas fa-database pr-1"></i>
+                        <span>Запросы</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main class="container-fluid py-3">
+
+        <div class="row p-3">
+            <div class="col-md-3">
+                <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                    <a href="query1.html" class="nav-link ">Запрос 1</a>
+                    <a href="query2.html" class="nav-link ">Запрос 2</a>
+                    <a href="query3.html" class="nav-link ">Запрос 3</a>
+                    <a href="query4.html" class="nav-link ">Запрос 4</a>
+                    <a href="query5.html" class="nav-link ">Запрос 5</a>
+                    <a href="query6.html" class="nav-link ">Запрос 6</a>
+                    <a href="query7.html" class="nav-link ">Запрос 7</a>
+                    <a href="query8.html" class="nav-link active">Запрос 8</a>
+                </div>
+            </div>
+
+            <div class="col-md-9 shadow p-4">
+                <h3 class="pb-2">Запрос 8</h3>
+
+                <p class="pb-1">
+                    Уменьшить количество книг по C++ на 1, не допускать отрицательных значений
+                </p>
+
+                <table class="table table-bordered table-hover" id="containerTable">
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer container-fluid bg-primary text-light">
+        <span>Богдан, ПД811, Донецк, 2020</span>
+        <a href="mailto:klm_b@outlook.com">
+            <i class="fas fa-envelope pl-2 text-success"></i>
+        </a>
+    </footer>
+
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/index.js"></script>
+    <script src="../../js/queries.js"></script>
+    <script>loadQuery(8);</script>
+</body>
+</html>

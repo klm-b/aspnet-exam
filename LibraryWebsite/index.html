@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фитнес клуб</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <!-- header -->
+    <header class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <!-- Иконка -->
+        <a class="navbar-brand" href="#">
+            <img src="img/kb_logo.svg" alt="KB logo" />
+        </a>
+
+        <!--Кнопка для разворачивания меню-->
+        <button aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-target="#navbarToggler" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Навигация -->
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav">
+                <li class="nav-item px-3 active">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home pr-1"></i>
+                        <span>Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item px-3">
+                    <a href="html/tables/books.html" class="nav-link">
+                        <i class="fas fa-table pr-1"></i>
+                        <span>Таблицы</span>
+                    </a>
+                </li>
+
+                <li class="nav-item px-3">
+                    <a href="html/queries/query1.html" class="nav-link">
+                        <i class="fas fa-database pr-1"></i>
+                        <span>Запросы</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container" role="main">
+        <div class="row py-3">
+            <div class="col">
+                <h2>Задача 1</h2>
+                <p>Разработайте решение с двумя приложениями – первое, серверное приложение, предоставляет WebAPI (REST набор запросов) второму, клиентскому приложению. Клиентский проект реализуйте на HTML5, CSS3, Bootstrap, jQuery.</p>
+                <p>Решение должно реализовать следующие запросы к базе данных (структура базы данных на следующем рисунке, используйте Entity Framework Core). Дизайн клиентского приложения произволен, но все-таки требуется выводить данные о разработчике и задание на разработку по отдельным командам.</p>
+                <img src="img/task.png" alt="Task" />
+                <ul>
+                    <li><b>Запрос 1.</b> Вывести полную информацию обо всех книгах</li>
+                    <li><b>Запрос 2.</b> Вывести название, год издания, автора и цену учебников по Android</li>
+                    <li><b>Запрос 3.</b> Вывести название, год издания и количество задачников по LINQ</li>
+                    <li><b>Запрос 4.</b> Вывести автора, название, категорию и стоимость для каждой книги, количество которых от 4 до 6</li>
+                    <li><b>Запрос 5.</b> Вывести фамилии и инициалы авторов и количество книг этих авторов</li>
+                    <li><b>Запрос 6.</b> Для категорий книг вывести количество, минимальную стоимость книги, среднюю стоимость книги, максимальную стоимость книги</li>
+                    <li><b>Запрос 7.</b> Для всех книг автора Абрамян М.Э. увеличить стоимость книг на 15%</li>
+                    <li><b>Запрос 8.</b> Уменьшить количество книг по C++ на 1, не допускать отрицательных значений.</li>
+                </ul>
+                <p>Также необходимо выводить все таблицы в отдельных страницах, реализовать CRUD-операции с таблицами (удаление - безопасное).</p>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- footer -->
+    <footer class="footer container-fluid bg-primary text-light">
+        <span>Богдан, ПД811, Донецк, 2020</span>
+        <a href="mailto:klm_b@outlook.com">
+            <i class="fas fa-envelope pl-2 text-success"></i>
+        </a>
+    </footer>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<EntryExamsApp.Models.Exam>
+
+@{
+    ViewData["Title"] = "Экзамены";
+}
+
+<main class="container py-3">
+    <h2 class="pb-2">Все экзамены</h2>
+    <p>
+        <a asp-action="Create" class="btn btn-success">Новый экзамен</a>
+    </p>
+
+    @await Html.PartialAsync("_ExamsTable", Model)
+</main>

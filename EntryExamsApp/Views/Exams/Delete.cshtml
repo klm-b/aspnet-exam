@@ -1,0 +1,54 @@
+﻿@model EntryExamsApp.Models.Exam
+
+@{
+    ViewData["Title"] = "Удаление";
+}
+
+<main class="container py-3">
+    <h2>Удаление экзамена</h2>
+
+    <h3>Вы уверены, что хотите удалить информацию о данном экзамене?</h3>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Mark)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mark)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Enrollee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(modelItem => modelItem.Enrollee.Surname)
+            @Html.DisplayFor(modelItem => modelItem.Enrollee.Name)
+            @Html.DisplayFor(modelItem => modelItem.Enrollee.Patronymic)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Examiner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(modelItem => modelItem.Examiner.Surname)
+            @Html.DisplayFor(modelItem => modelItem.Examiner.Name)
+            @Html.DisplayFor(modelItem => modelItem.Examiner.Patronymic)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Discipline)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Discipline.Name)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary ml-2">Обратно к списку</a>
+    </form>
+</main>

@@ -1,0 +1,62 @@
+﻿@model EntryExamsApp.Models.ViewModels.EnrolleeViewModel
+
+@{
+    ViewData["Title"] = "Редактировать";
+}
+
+<main class="container py-3">
+    <h2>Редактировать данные о абитуриенте</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BirthYear" class="control-label"></label>
+                    <input asp-for="BirthYear" class="form-control" />
+                    <span asp-validation-for="BirthYear" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Passport" class="control-label"></label>
+                    <input asp-for="Passport" class="form-control" />
+                    <span asp-validation-for="Passport" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Surname" class="control-label"></label>
+                    <input asp-for="Surname" class="form-control" />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Patronymic" class="control-label"></label>
+                    <input asp-for="Patronymic" class="form-control" />
+                    <span asp-validation-for="Patronymic" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photo">Файл</label>
+                    <input asp-for="Photo" class="form-control-file">
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                    <input type="hidden" asp-for="PhotoPath">
+                </div>
+                <div class="form-group pt-2">
+                    <input type="submit" value="Сохранить" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary ml-2">Обратно к списку</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</main>

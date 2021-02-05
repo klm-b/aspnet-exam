@@ -1,0 +1,62 @@
+﻿@model IEnumerable<EntryExamsApp.Models.ViewModels.Query8ViewModel>
+
+@{
+    ViewBag.Title = "Запрос 8";
+}
+
+<main class="container-fluid py-3">
+
+    <div class="row p-3">
+        <div class="col-md-2">
+            <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                <a asp-action="Query1" class="nav-link">Запрос 1</a>
+                <a asp-action="Query2" class="nav-link">Запрос 2</a>
+                <a asp-action="Query3" class="nav-link">Запрос 3</a>
+                <a asp-action="Query4" class="nav-link">Запрос 4</a>
+                <a asp-action="Query5" class="nav-link">Запрос 5</a>
+                <a asp-action="Query6" class="nav-link">Запрос 6</a>
+                <a asp-action="Query7" class="nav-link">Запрос 7</a>
+                <a asp-action="Query8" class="nav-link active">Запрос 8</a>
+            </div>
+        </div>
+
+        <div class="col-md-8 offset-1 shadow">
+            <h2 class="pt-2">Запрос 8</h2>
+            <p>
+                Выполняет группировку по полю Наименование дисциплины в таблице ЭКЗАМЕНЫ. Для каждой дисциплины вычисляет среднее значения по полю Оценка
+            </p>
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Discipline)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvgMark)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ExamsCount)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Discipline)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AvgMark)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExamsCount)
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

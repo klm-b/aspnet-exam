@@ -1,0 +1,51 @@
+﻿@model EntryExamsApp.Models.Exam
+
+@{
+    ViewData["Title"] = "Редактировать";
+}
+
+<main class="container py-3">
+    <h2>Редактировать данные о экзамене</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Mark" class="control-label"></label>
+                    <input asp-for="Mark" class="form-control" />
+                    <span asp-validation-for="Mark" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date" class="control-label"></label>
+                    <input asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EnrolleeId" class="control-label"></label>
+                    <select asp-for="EnrolleeId" class="form-control" asp-items="ViewBag.Enrollees"></select>
+                    <span asp-validation-for="EnrolleeId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ExaminerId" class="control-label"></label>
+                    <select asp-for="ExaminerId" class="form-control" asp-items="ViewBag.Examiners"></select>
+                    <span asp-validation-for="ExaminerId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DisciplineId" class="control-label"></label>
+                    <select asp-for="DisciplineId" class="form-control" asp-items="ViewBag.Disciplines"></select>
+                    <span asp-validation-for="DisciplineId" class="text-danger"></span>
+                </div>
+                <div class="form-group pt-2">
+                    <input type="submit" value="Сохранить" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary ml-2">Обратно к списку</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

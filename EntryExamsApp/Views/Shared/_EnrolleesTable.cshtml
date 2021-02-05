@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EntryExamsApp.Models.Enrollee>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="fit">
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patronymic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthYear)
+            </th>
+            <th class="text-center fir"><i class="fas fa-cogs"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="fit">
+                    <img src="~/img/persons/@Html.DisplayFor(modelItem => item.Photo)" alt="photo" width="60" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patronymic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passport)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthYear)
+                </td>
+                <td class="p-0 fit">
+                    <a class="d-block text-center" asp-controller="Enrollees" asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle m-1"></i></a>
+                    <a class="d-block text-center" asp-controller="Enrollees" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit m-1"></i></a>
+                    <a class="d-block text-center" asp-controller="Enrollees" asp-action="Delete" asp-route-id="@item.Id"><i class="fas text-danger m-1 fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

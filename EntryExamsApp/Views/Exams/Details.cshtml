@@ -1,0 +1,52 @@
+﻿@model EntryExamsApp.Models.Exam
+
+@{
+    ViewData["Title"] = "Подробнее";
+}
+
+<main class="container py-3">
+    <h2>Подробнее</h2>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Mark)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mark)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Enrollee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(modelItem => modelItem.Enrollee.Surname)
+            @Html.DisplayFor(modelItem => modelItem.Enrollee.Name)
+            @Html.DisplayFor(modelItem => modelItem.Enrollee.Patronymic)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Examiner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(modelItem => modelItem.Examiner.Surname)
+            @Html.DisplayFor(modelItem => modelItem.Examiner.Name)
+            @Html.DisplayFor(modelItem => modelItem.Examiner.Patronymic)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Discipline)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Discipline.Name)
+        </dd>
+    </dl>
+
+    <div>
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+        <a asp-action="Index" class="btn btn-secondary ml-2">Обратно к списку</a>
+    </div>
+</main>
